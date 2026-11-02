@@ -1,0 +1,25 @@
+From ee6b2038d2a615f5415947663a1fe9a8d3b21d66 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ionel=20B=C4=83di=C8=99or?= <ibadisor@emerson.com>
+Date: Wed, 14 Oct 2026 11:29:36 +0300
+Subject: [PATCH] Show PSU initialization ok message
+
+---
+ lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c
+index cf1e784ebf..cc3ab5803f 100644
+--- a/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c
++++ b/lib/sw_apps/zynqmp_fsbl/src/xfsbl_initialization.c
+@@ -839,6 +839,8 @@ static u32 XFsbl_SystemInit(XFsblPs * FsblInstancePtr)
+ 		goto END;
+ 	}
+ 
++	XFsbl_Printf(DEBUG_GENERAL,"boot.bin: PSU initialization OK \n\r");
++
+ #ifdef XFSBL_PS_DDR
+ #if defined(XPAR_DYNAMIC_DDR_ENABLED)
+ 	/*
+-- 
+2.56.0
+
